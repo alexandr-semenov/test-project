@@ -35,4 +35,7 @@ Test project
     ```
     http://127.0.0.1:8000/docs
     ```
-    ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/demo_image.png?raw=true)
+    ![alt text](https://github.com/alexandr-semenov/test-project/blob/master/demo_image.png?raw=true)
+    ```
+    Test uid - 507f1f77bcf86cd79943901, amount - 10000
+    ```
