@@ -1,0 +1,15 @@
+fos_rest:
+  param_fetcher_listener:  true
+  body_listener:
+    decoders:
+      xml: fos_rest.decoder.xml
+  serializer:
+    serialize_null: false
+  view:
+    view_response_listener: true
+    formats:
+      json: true
+      xml: true
+  format_listener:
+    rules:
+      - { path: ^/, prefer_extension: true, fallback_format: xml, priorities: [ xml, html ] }

@@ -1,0 +1,79 @@
+openapi: 3.0.0
+info:
+  title: 'Web service'
+  version: '0.1'
+servers:
+  -
+    url: /
+    description: 'web service api'
+paths:
+  /credit:
+    post:
+      tags:
+        - Transactions
+      operationId: 'App\Controller\TransactionController::creditAction'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#components/schemas/CreditInput'
+      responses:
+        '200':
+          description: 'Credit operation success'
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CreditInput'
+  /debit:
+    post:
+      tags:
+        - Transactions
+      operationId: 'App\Controller\TransactionController::debitAction'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#components/schemas/DebitInput'
+      responses:
+        '200':
+          description: 'Debit operation success'
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/DebitInput'
+components:
+  schemas:
+    CreditInput:
+      properties:
+        amount:
+          type: integer
+          xml:
+            attribute: true
+        tid:
+          type: integer
+          xml:
+            attribute: true
+        uid:
+          type: string
+          xml:
+            attribute: true
+      type: object
+      xml:
+        name: credit
+    DebitInput:
+      properties:
+        amount:
+          type: integer
+          xml:
+            attribute: true
+        tid:
+          type: integer
+          xml:
+            attribute: true
+        uid:
+          type: string
+          xml:
+            attribute: true
+      type: object
+      xml:
+        name: debit
