@@ -53,7 +53,7 @@ class TransactionController
      *              @OA\Schema(ref="#components/schemas/CreditInput")
      *          )
      *     ),
-     *     @OA\Response(response="200", description="Credit operation success", @OA\XmlContent(ref="#/components/schemas/CreditInput")),
+     *     @OA\Response(response="200", description="Credit operation success", @OA\XmlContent(ref="#/components/schemas/Result")),
      * )
      *
      * @ParamConverter(
@@ -87,7 +87,7 @@ class TransactionController
      *              @OA\Schema(ref="#components/schemas/DebitInput")
      *          )
      *     ),
-     *     @OA\Response(response="200", description="Debit operation success", @OA\XmlContent(ref="#/components/schemas/DebitInput")),
+     *     @OA\Response(response="200", description="Debit operation success", @OA\XmlContent(ref="#/components/schemas/Result")),
      * )
      *
      * @ParamConverter(

@@ -4,10 +4,13 @@ declare(strict_types = 1);
 namespace App\AppResponse;
 
 use JMS\Serializer\Annotation as JMS;
+use OpenApi\Annotations as OA;
 
 /**
  * Class Result
  * @JMS\XmlRoot("result")
+ *
+ * @OA\Schema(@OA\Xml(name="result"))
  */
 class Result
 {
@@ -22,6 +25,8 @@ class Result
      * @JMS\Type("string")
      * @JMS\XmlAttribute()
      * @JMS\Groups(groups={"success", "error"})
+     *
+     * @OA\Property(@OA\Xml(attribute=true))
      */
     private $status;
 
@@ -32,6 +37,8 @@ class Result
      * @JMS\XmlAttribute()
      * @JMS\Groups(groups={"error"})
      * @JMS\SerializedName("msg")
+     *
+     * @OA\Property(@OA\Xml(name="msg", attribute=true))
      */
     private $message;
 

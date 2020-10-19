@@ -23,7 +23,7 @@ paths:
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/CreditInput'
+                $ref: '#/components/schemas/Result'
   /debit:
     post:
       tags:
@@ -40,9 +40,23 @@ paths:
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/DebitInput'
+                $ref: '#/components/schemas/Result'
 components:
   schemas:
+    Result:
+      properties:
+        status:
+          type: string
+          xml:
+            attribute: true
+        message:
+          type: string
+          xml:
+            name: msg
+            attribute: true
+      type: object
+      xml:
+        name: result
     CreditInput:
       properties:
         amount:
